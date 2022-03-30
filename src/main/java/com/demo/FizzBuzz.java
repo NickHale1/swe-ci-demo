@@ -4,14 +4,41 @@ public class FizzBuzz
 {
     String processNumber(int num)
 	{	
-    	// Copy your code here
-		return "";
+    	if(num <= 0) {
+			return "Invalid";
+		}
+		if(num%15==0) {
+			return "Fizz Buzz";
+		} else if (num%5==0) {
+			return "Buzz";
+		} else if (num%3==0) {
+			return "Fizz";
+		}
+		
+		return String.valueOf(num);
 	}
 	
 	String processNumbers (int[] numList)
 	{
-    	// Copy your code here
-		return "";
+    	if(numList==null){
+			return "Invalid";
+		}
+		if(numList.length<=0) {
+			return "Invalid";
+		}
+		int i =0;
+		String output="";
+		while(i<numList.length-1) {
+			output += processNumber(numList[i]);
+			output += ", ";
+			i++;
+		}
+		output += processNumber(numList[numList.length-1]);
+		if (output.contains("Invalid")){
+			return "Invalid";
+		}
+
+		return output;
 	}
 
 }
